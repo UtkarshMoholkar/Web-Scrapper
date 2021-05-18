@@ -24,17 +24,19 @@ public  class Scrapper
         try
         {
             Document document = Jsoup.connect(url).get(); //Connection to the URL
-//            System.out.println(document.outerHtml()); This line prints whole HTML
+            //System.out.println(document.outerHtml()); This line prints whole HTML
+            
             //Code to extract data using CSS selectors
             System.out.println(document.select(".lbl-licitacao:nth-child(1)").text());
             System.out.println(document.select(".lbl-licitacao:nth-child(13)").text());
             System.out.println(document.select(".lbl-licitacao:nth-child(19)").text());
             System.out.println(document.select(".lbl-licitacao:nth-child(4) ").text());
             System.out.println(document.select("p:nth-child(6)").text());
-//            System.out.println(document.select("tr:nth-child(1) a[href]").get(1));
+            
+            //System.out.println(document.select("tr:nth-child(1) a[href]").get(1));
 
 
-            //            Code to extract links using CSS selectors
+            //Code to extract links using CSS selectors
             Elements links1 = document.select("tr:nth-child(1) a[href]");
             Elements links2 = document.select("tr:nth-child(2) a[href]");
             Elements links3 = document.select("tr:nth-child(3) a[href]");

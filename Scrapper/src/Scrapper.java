@@ -24,7 +24,8 @@ public  class Scrapper
         try
         {
             Document document = Jsoup.connect(url).get(); //Connection to the URL
-            //System.out.println(document.outerHtml()); This line prints whole HTML
+            
+            //System.out.println(document.outerHtml()); This outerHtml() function gets whole HTML page
             
             //Code to extract data using CSS selectors
             System.out.println(document.select(".lbl-licitacao:nth-child(1)").text());
